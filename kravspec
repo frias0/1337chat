@@ -1,0 +1,23 @@
+android irc app:
+
+random funktioner:
+"hem sida" med kanaler och personer, likt hangouts
+logga in med google?/koppla nick till google inlogg
+  möjlighet att spara keys för kryptering på google server?
+  möjlighet att spara historik?
+notification på highlight av ditt nick/private msg
+animerade gifs/html5
+krypterad text, delade keys mellan personer/kanaler
+skicka filer med DCC(dela bilder är kass dock, måste ladda upp till alla, autoupload till imgur?)
+skicka position, kopplat till google maps
+
+
+intressant java irc lib https://code.google.com/p/pircbotx/
+
+måste fungera med en irc klient på datorn också
+  återanvända kod för en desktopklient också? animerade giiiifs :D
+
+
+
+
+
