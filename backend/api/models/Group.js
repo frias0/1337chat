@@ -10,10 +10,10 @@ module.exports = {
   attributes: {
     id: "INTEGER"
   },
-  users: {
-    collection: "user",
-    via: "groups"
-  },
+  // users: {
+  //   collection: "user",
+  //   via: "groups"
+  // },
   activities: {
     collection: "activity",
     via: "groups"
