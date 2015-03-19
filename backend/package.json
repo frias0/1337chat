@@ -32,7 +32,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/lundh/backend.git"
+    "url": "git://github.com/frias0/leet_chat.git"
   },
   "author": "lundh",
   "license": ""
