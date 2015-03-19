@@ -17,7 +17,9 @@ export NVM_DIR="/home/vagrant/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 nvm install 0.12
 nvm use 0.12
+ls -al
 sudo chown -R vagrant ~/.npm
+
 sudo ln -s /usr/local/bin/node /usr/bin/node
 sudo ln -s /usr/local/lib/node /usr/lib/node
 sudo ln -s /usr/local/bin/npm /usr/bin/npm
@@ -35,11 +37,11 @@ sudo chown -R vagrant leet_chat
 cd leet_chat
 
 echo "LOADING DB CONFIG"
-mysql -u root < db.sql
+sudo mysql -u root < db.sql
 cd backend
 
 echo "INSTALLING DEPENDENCIES"
-npm install sails
+npm install sails -g
 npm install
 echo "SETUP DONE"
 sails lift
