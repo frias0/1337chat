@@ -19,7 +19,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get install -y -q mysql-server #pw blank
 
 echo "SETTING UP PROJECT"
-git clone https://github.com/frias0/leet_chat.git
+git clone https://github.com:frias0/leet_chat.git
 cd leet_chat
 
 echo "LOADING DB CONFIG"
