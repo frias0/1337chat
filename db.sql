@@ -1,3 +1,2 @@
-CREATE USER 'sails'@'localhost' IDENTIFIED BY 'password';
-CREATE DATABASE sails-test;
-GRANT ALL PRIVILEGES ON sails-test.* TO 'sails'@'localhost';
+CREATE DATABASE IF NOT EXISTS sails_test;
+GRANT ALL PRIVILEGES ON sails_test.* TO 'sails'@'localhost';

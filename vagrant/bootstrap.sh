@@ -7,6 +7,7 @@ apt-get install -y python-software-properties python g++ make
 echo "SETTNG UP NODEJS"
 #apt-get install -y nodejs
 curl https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash
+source ~/.bashrc
 nvm install 0.12
 nvm use 0.12
 npm -g install sails
