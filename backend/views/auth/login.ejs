@@ -4,16 +4,22 @@
   <% }) %>
 <% } %>
 
-<form role="form" action="/auth/local" method="post">
+<!-- <form role="form" action="/auth/local" method="post">
   <input type="text" name="identifier" placeholder="Username or Email">
   <input type="password" name="password" placeholder="Password">
   <button type="submit">Sign in</button>
-</form>
+</form> -->
 
-<% if (providers.length) {%>
-  <h4>You can also use one of these...</h4>
+<div class="container">
 
-  <% Object.keys(providers).forEach(function (key) { %>
-    <a href="/auth/<%= providers[key].slug %>" role="button"><%= providers[key].name %></a>
-  <% }) %>
-<% } %>
+    <form role="form" class="form-signin" method="post" action="/auth/login">
+      <h2 class="form-signin-heading">Please sign in</h2>
+      <input name="identifier" type="text" class="input-block-level" placeholder="User name or Email">
+      <input name="password" type="password" class="input-block-level" placeholder="Password">
+      <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    </form>
+
+</div> <!-- /container -->
+<div class="container">
+  <a href="/auth/google" role="button"><img src="/images/sign-in-with-google.png"></a>
+</div>

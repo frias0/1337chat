@@ -27,9 +27,10 @@ module.exports.passport = {
     name: 'Google',
     protocol: 'oauth2',
     strategy: require('passport-google-oauth').OAuth2Strategy,
+    scope: ['https://www.googleapis.com/auth/plus.login'],
     options: {
-      clientID: 'your-client-id',
-      clientSecret: 'your-client-secret'
+      clientID: '451431386283-u4siheu3s85enjkfe8tbc6n88814825t.apps.googleusercontent.com',
+      clientSecret: '718XGg7Al0moT1upqNx0KT0a'
     }
   }
 };

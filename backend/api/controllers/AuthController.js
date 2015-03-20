@@ -37,7 +37,7 @@ var AuthController = {
     // Get a list of available providers for use in your templates.
     Object.keys(strategies).forEach(function (key) {
       if (key === 'local') {
-        return;
+        //return;
       }
 
       providers[key] = {
@@ -47,9 +47,12 @@ var AuthController = {
     });
 
     // Render the `auth/login.ext` view
+    //console.log(providers);
+    //res.json({providers: providers});
+
     res.view({
-      providers : providers
-    , errors    : req.flash('error')
+      providers : providers,
+      errors    : req.flash('error')
     });
   },
 
@@ -69,10 +72,10 @@ var AuthController = {
    */
   logout: function (req, res) {
     req.logout();
-    
+
     // mark the user as logged out for auth purposes
     req.session.authenticated = false;
-    
+
     res.redirect('/');
   },
 
@@ -164,10 +167,10 @@ var AuthController = {
         if (err) {
           return tryAgain(err);
         }
-        
+
         // Mark the session as authenticated to work with default Sails sessionAuth.js policy
         req.session.authenticated = true
-        
+
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
         res.redirect('/');
