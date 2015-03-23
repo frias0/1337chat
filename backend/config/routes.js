@@ -40,6 +40,7 @@ module.exports.routes = {
     view: 'web'
   }
 */
+'GET /web': 'ChatController.show'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
