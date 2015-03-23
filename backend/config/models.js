@@ -27,6 +27,7 @@ module.exports.models = {
   * See http://sailsjs.org/#/documentation/concepts/ORM/model-settings.html  *
   *                                                                          *
   ***************************************************************************/
-  migrate: 'drop'
+  connection: 'leet_chat_db',
+  migrate: 'drop' //safe alter drop
 
 };
