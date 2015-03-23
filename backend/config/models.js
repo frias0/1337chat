@@ -17,7 +17,7 @@ module.exports.models = {
   * connections (see `config/connections.js`)                                *
   *                                                                          *
   ***************************************************************************/
-  connection: 'leet_chat_db',
+  //connection: 'leet_chat_db',
 
   /***************************************************************************
   *                                                                          *

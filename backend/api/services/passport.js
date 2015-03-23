@@ -224,12 +224,15 @@ passport.endpoint = function (req, res) {
 passport.callback = function (req, res, next) {
   var provider = req.param('provider', 'local')
     , action   = req.param('action');
-
+    //console.log(req.body);
   // Passport.js wasn't really built for local user registration, but it's nice
   // having it tied into everything else.
   if (provider === 'local' && action !== undefined) {
     if (action === 'register' && !req.user) {
       this.protocols.local.register(req, res, next);
+    }
+    else if (action === 'login' && !req.user) {
+      this.protocols.local.login(req, req.body.identifier, req.body.password, next);
     }
     else if (action === 'connect' && req.user) {
       this.protocols.local.connect(req, res, next);
@@ -244,6 +247,7 @@ passport.callback = function (req, res, next) {
     if (action === 'disconnect' && req.user) {
       this.disconnect(req, res, next) ;
     } else {
+      console.log("HULLO");
       // The provider will redirect the user to this URL after approval. Finish
       // the authentication process by attempting to obtain an access token. If
       // access was granted, the user will be logged in. Otherwise, authentication
@@ -297,12 +301,12 @@ passport.loadStrategies = function () {
         self.use(new Strategy(options, self.protocols.local.login));
       }
     } else if (key === 'bearer') {
-      
+
       if (strategies.bearer) {
         Strategy = strategies[key].strategy;
         self.use(new Strategy(self.protocols.bearer.authorize));
       }
-      
+
     } else {
       var protocol = strategies[key].protocol
         , callback = strategies[key].callback;
