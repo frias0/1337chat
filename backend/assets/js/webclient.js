@@ -1,8 +1,22 @@
 var socketApp = angular.module('socketApp',[]);
 
-socketApp.controller('ChatController',['$http','$log','$scope',function($http,$log,$scope){
-
-
+socketApp
+.directive('schrollBottom', function () {
+  return {
+    scope: {
+      schrollBottom: "="
+    },
+    link: function (scope, element) {
+      scope.$watchCollection('schrollBottom', function (newValue) {
+        if (newValue)
+        {
+          $(element).scrollTop($(element)[0].scrollHeight);
+        }
+      });
+    }
+  }
+})
+.controller('ChatController',['$http','$log','$scope',function($http,$log,$scope){
 	$scope.predicate = '-id';
 	$scope.reverse = false;
 	$scope.baseUrl = 'http://localhost:1337';

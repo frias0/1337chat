@@ -13,7 +13,9 @@
 	<!-- Sails Socket Dependancy -->
 	<script type="text/javascript" src="/js/dependencies/sails.io.js"></script>
 	<!-- Angular Js  -->
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>-->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/webclient.js"></script>
 
 	<!--NAVBAR / HEADER-->
@@ -26,34 +28,34 @@
 			</button>
 			<a class="navbar-brand" href="" onclick="location.reload()">Leet Web Chat</a>
 		</div>
-				<div class="navbar-collapse collapse navbar-responsive-collapse">
-			 		<ul class="nav navbar-nav navbar-right">
-			    	<li><a href=""><strong>Go nowhere >> &nbsp;&nbsp;&nbsp;</strong></a></li>
-			   	</ul>
-				</div>
+		<div class="navbar-collapse collapse navbar-responsive-collapse">
+	 		<ul class="nav navbar-nav navbar-right">
+	    	<li><a href=""><strong>Go nowhere >> &nbsp;&nbsp;&nbsp;</strong></a></li>
+	   	</ul>
 		</div>
+	</div>
 
 		<!--Chat messages-->
-		<div class="col-xs-12 chatMessageContainer">
-			<table  class="table">
-				<tr class="chat_message" ng-repeat="chat in chatList">
-					<td class="col-xs-12 td_class"><strong>{{ chat.user }} : </strong> {{ chat.message }}</td>
-				</tr>
-			</table>
-		</div>
+	<div schroll-bottom="chatList" class="col-xs-12 chatMessageContainer">
+		<table  class="table">
+			<tr class="chat_message" ng-repeat="chat in chatList">
+				<td class="col-xs-12 td_class"><strong>{{ chat.user }} : </strong> {{ chat.message }}</td>
+			</tr>
+		</table>
+	</div>
 
 		<!--New message/send footer-->
-		<div class="navbar navbar-inverse navbar-fixed-bottom" >
-		  <div class="row-xs-12">
+	<div class="navbar navbar-inverse navbar-fixed-bottom" >
+	  <div class="row-xs-12">
 
-		    <form class="form_chat">
-		    	<div class="col-xs-10 nopadding">
-		      		<input type="text" ng-model = "chatMessage" class="form-control" placeholder="TypeYourMessageHere">
-	        </div>
-	        <button class="btn btn-default col-xs-2" ng-click="sendMsg()">Send</button>
-		    </form>
+	    <form class="form_chat">
+	    	<div class="col-xs-10 nopadding">
+	      		<input type="text" ng-model = "chatMessage" class="form-control" placeholder="TypeYourMessageHere">
+        </div>
+        <button class="btn btn-default col-xs-2" ng-click="sendMsg()">Send</button>
+	    </form>
 
-		  </div>
-		</div>
+	  </div>
+	</div>
 </body>
 </html>
