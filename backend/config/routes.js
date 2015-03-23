@@ -46,7 +46,9 @@ module.exports.routes = {
   'get /auth/:provider/:action': 'AuthController.callback',
   //'get /auth/google': passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] })
 
-  'GET /web': 'ChatController.show'
+  'GET /web': 'ChatController.show',
+
+  'GET /profile':'UserController.show'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
