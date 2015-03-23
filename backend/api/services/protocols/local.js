@@ -166,6 +166,7 @@ exports.login = function (req, identifier, password, next) {
       protocol : 'local'
     , user     : user.id
     }, function (err, passport) {
+      console.log("success!");
       if (passport) {
         passport.validatePassword(password, function (err, res) {
           if (err) {

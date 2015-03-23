@@ -6,16 +6,13 @@
 */
 
 module.exports = {
+  connection: "leet_chat_db",
 
   attributes: {
-    id: "INTEGER"
-  },
-  // users: {
-  //   collection: "user",
-  //   via: "groups"
-  // },
-  activities: {
-    collection: "activity",
-    via: "groups"
+    // activities: {
+    //   collection: "activity",
+    //   via: "groups"
+    // }
   }
+
 };
