@@ -12,7 +12,7 @@ module.exports = {
   },
   group: {
     model: "group"
-  }
+  },
   user: {
     model: "user"
   }

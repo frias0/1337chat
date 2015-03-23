@@ -6,15 +6,15 @@ var User = {
     username  : { type: 'string', unique: true },
     email     : { type: 'email',  unique: true },
     passports : { collection: 'Passport', via: 'user' }
-  }
+  },
   groups:{
     collection: "group",
     via: "users",
     dominant: true
-  }
+  },
   activities :{
     collection: "activity",
-    via "users"
+    via: "users"
   }
 };
 
