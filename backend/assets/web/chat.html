@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
 	<script type="text/javascript" src="../js/webclient.js"></script>
 
+	<!--NAVBAR / HEADER-->
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-header">
 	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -32,14 +33,16 @@
 				</div>
 		</div>
 
-		<div class="col-xs-12" style="padding:10px">
+		<!--Chat messages-->
+		<div class="col-xs-12 chatMessageContainer">
 			<table  class="table">
-				<tr class="chat_message" ng-repeat="chat in chatList | orderBy:predicate:reverse | limitTo: 30">
+				<tr class="chat_message" ng-repeat="chat in chatList">
 					<td class="col-xs-12 td_class"><strong>{{ chat.user }} : </strong> {{ chat.message }}</td>
 				</tr>
 			</table>
 		</div>
 
+		<!--New message/send footer-->
 		<div class="navbar navbar-inverse navbar-fixed-bottom" >
 		  <div class="row-xs-12">
 

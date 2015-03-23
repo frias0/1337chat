@@ -11,3 +11,8 @@ body{
 .navbar {
 	min-height: 40px;
 }
+
+.chatMessageContainer {
+	padding-bottom: 30px;
+	padding-top:10px;
+}
