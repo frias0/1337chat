@@ -3,3 +3,11 @@ body{
 		font-family: 'Open Sans', sans-serif;
 		padding-top:45px;
 }
+
+.nopadding {
+	padding:0px;
+}
+
+.navbar {
+	min-height: 40px;
+}
