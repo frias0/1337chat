@@ -18,7 +18,7 @@ socketApp
 })
 .controller('ChatController',['$http','$log','$scope',function($http,$log,$scope){
 	$scope.predicate = '-id';
-	$scope.reverse = false;
+	$scope.reverse = true;
 	$scope.baseUrl = 'http://localhost:1337';
 	$scope.chatList =[];
 	$scope.getAllchat = function(){
