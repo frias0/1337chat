@@ -1,0 +1,21 @@
+body{
+		background: #ededed;
+		font-family: 'Open Sans', sans-serif;
+		padding-top:45px;
+}
+
+.nopadding {
+	padding:0px;
+}
+
+.navbar {
+	min-height: 40px;
+}
+
+#content {
+	padding:10px;
+}
+
+.glyphicon-plus {
+	font-size: 6.5em;
+}
