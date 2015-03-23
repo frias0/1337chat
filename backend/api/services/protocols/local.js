@@ -24,6 +24,7 @@ var crypto    = require('crypto');
  * @param {Function} next
  */
 exports.register = function (req, res, next) {
+  console.log("REGISTER");
   var email    = req.param('email')
     , username = req.param('username')
     , password = req.param('password');
@@ -95,6 +96,7 @@ exports.register = function (req, res, next) {
  * @param {Function} next
  */
 exports.connect = function (req, res, next) {
+  console.log("CONNECT");
   var user     = req.user
     , password = req.param('password');
 
@@ -134,6 +136,7 @@ exports.connect = function (req, res, next) {
  * @param {Function} next
  */
 exports.login = function (req, identifier, password, next) {
+  console.log("LOGIN");
   var isEmail = validator.isEmail(identifier)
     , query   = {};
 

@@ -31,6 +31,7 @@ var AuthController = {
    * @param {Object} res
    */
   login: function (req, res) {
+    console.log("login");
     var strategies = sails.config.passport
       , providers  = {};
 
@@ -127,6 +128,7 @@ var AuthController = {
    * @param {Object} res
    */
   callback: function (req, res) {
+    console.log(req.route);
     function tryAgain (err) {
 
       // Only certain error messages are returned via req.flash('error', someError)

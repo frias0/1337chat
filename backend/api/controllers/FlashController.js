@@ -14,10 +14,7 @@ module.exports = {
     Passport
       .findOne({ protocol: 'local', user: req.user.id })
       .exec(function(err, passport) {
-        return res.json({
-          todo: 'home() is not implemented yet! But you are logged in :)',
-          token: passport.accessToken
-        });
+        return res.render('chat');
       });
   },
 
@@ -25,9 +22,8 @@ module.exports = {
    * `FlashController.remotehome()`
    */
   remotehome: function (req, res) {
-    return res.json({
-      todo: 'remotehome() is not implemented yet! But you are authorized :)'
-    });
+    res.json({status:"No Authorization"})
+    //return res.render('auth/login')
   }
 
 };
