@@ -28,9 +28,6 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
-    adapter: 'sails-disk'
-  },
 
   /***************************************************************************
   *                                                                          *
@@ -40,7 +37,7 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
-  someMysqlServer: {
+  leet_chat_db: {
     adapter: 'sails-mysql',
     host: 'localhost',
     user: 'sails',

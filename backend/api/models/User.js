@@ -15,9 +15,13 @@ module.exports = {
       unique: true
     }
   },
-  group:{
+  groups:{
     collection: "group",
     via: "users",
     dominant: true
+  }
+  activities :{
+    collection: "activity",
+    via "users"
   }
 };
