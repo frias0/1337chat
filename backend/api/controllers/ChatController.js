@@ -29,6 +29,6 @@ module.exports = {
 	},
 
 	show:function(req, res) {
-		res.render('chat');
+		res.render('chat', {myName:req.user.username});
 	}
 };

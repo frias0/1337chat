@@ -34,7 +34,9 @@ socketApp
 	};
 
 	$scope.getAllchat();
-	$scope.chatUser = "Anonymous"
+	//$scope.chatUser = "Anonymous"
+  //get username from a hidden <p> tag in chat.ejs
+  $scope.chatUser = $('#hiddenName').text();
 	$scope.chatMessage="";
 
 	io.socket.on('chat',function(obj){
