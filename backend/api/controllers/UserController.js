@@ -7,8 +7,12 @@
 
 module.exports = {
 	show: function (req, res) {
-		console.log("show called")
-		var name = "My Name";
+		console.log("UserController.show:");
+		console.log(req.user);
+		var name = req.user.username;
+		var id = req.user.id;
+
+		//get conversations from User or Group model, identified by id
 
 		var c0 = {name:"Conversation X", nMessages:10, id:1};
 		var c1 = {name:"Conversation Y", nMessages:15, id:2};
