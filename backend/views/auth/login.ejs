@@ -16,6 +16,7 @@
     body{
         background: #ededed;
         font-family: 'Open Sans', sans-serif;
+        padding-bottom:10px;
     }
 
     .fa-google {
@@ -31,6 +32,11 @@
 </head>
 
 <body>
+  <% if (errors) {%>
+    <% errors.forEach(function (error) { %>
+      <%= __(error) %>
+    <% }) %>
+  <% } %>
   <!-- Navbar because it's pretty. Should probably be application-wide, so include it in stead of re-define it..? -->
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-header">
@@ -51,14 +57,14 @@
   <!-- Login container -->
   <div class="container">
     <h2>Log in</h2>
-    <form>
+    <form method="post" action="/auth/local/login">
       <div class="form-group">
         <label for="loginId">Username or Email</label>
-        <input type="email" class="form-control" id="loginId" placeholder="Username/Email" required>
+        <input name="identifier" type="email | text" class="form-control" id="loginId" placeholder="Username/Email" required>
       </div>
       <div class="form-group">
         <label for="loginPassword">Password</label>
-        <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+        <input name="password" type="password" class="form-control" id="loginPassword" placeholder="Password" required>
       </div>
       <button type="submit" class="btn btn-success">Login</button>
     </form>
@@ -69,24 +75,26 @@
     <button class="btn btn-success center-block" id="registerButton">Register</button>
   </div>
 
+  <!-- Registration container -->
   <div class="container" id="register">
     <h3>Register new account</h3>
-    <form>
+    <form method="post" action="/auth/local/register">
       <div class="form-group">
         <label for="registerName">Username</label>
-        <input type="text" class="form-control" id="registerName" placeholder="Username" required>
+        <input name="username" type="text" class="form-control" id="registerName" placeholder="Username" required>
       </div>
       <div class="form-group">
         <label for="registerEmail">Email</label>
-        <input type="email" class="form-control" id="registerEmail" placeholder="Email" required>
+        <input name="email" type="email" class="form-control" id="registerEmail" placeholder="Email" required>
       </div>
       <div class="form-group">
         <label for="registerPassword">Password</label>
-        <input type="password" class="form-control" id="registerPassword" placeholder="Password" required>
+        <input name="password" type="password" class="form-control" id="registerPassword" placeholder="Password" required>
       </div>
       <button type="submit" class="btn btn-success">Register</button>
     </form>
   </div>
+  
   <script>
     $(document).ready(function(){
       $("#register").hide();
@@ -96,7 +104,7 @@
       });
       $("#registerButton").click(function(){
           $("#register").show();
-          $("#register").animate({ scrollTop: $('#register')[0].scrollHeight}, 1000);
+          $("body").animate({ scrollTop: $('body')[0].scrollHeight}, 1000);
       });
     });
   </script>
