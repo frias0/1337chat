@@ -28,15 +28,14 @@
       padding:5px;
       text-align:center;
     }
+
+    .errorMessage {
+      color: #FF0000;
+    }
   </style>
 </head>
 
 <body>
-  <% if (errors) {%>
-    <% errors.forEach(function (error) { %>
-      <%= __(error) %>
-    <% }) %>
-  <% } %>
   <!-- Navbar because it's pretty. Should probably be application-wide, so include it in stead of re-define it..? -->
 	<div class="navbar navbar-default navbar-fixed-top">
 		<div class="navbar-header">
@@ -53,6 +52,14 @@
 			</ul>
 		</div>
 	</div>
+
+  <% if (errors) {%>
+    <div class="container">
+    <% errors.forEach(function (error) { %>
+      <h4 class="errorMessage"><%= __(error) %></h4>
+    <% }) %>
+    </div>
+  <% } %>
 
   <!-- Login container -->
   <div class="container">
@@ -94,7 +101,7 @@
       <button type="submit" class="btn btn-success">Register</button>
     </form>
   </div>
-  
+
   <script>
     $(document).ready(function(){
       $("#register").hide();
