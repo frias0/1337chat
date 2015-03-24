@@ -1,53 +1,104 @@
-<% if (errors) {%>
-  <% errors.forEach(function (error) { %>
-    <%= __(error) %>
-  <% }) %>
-<% } %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+	<!-- BootSwatch Paper Theme for Bootstrap -->
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<!-- Open Sans Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-<!-- <form role="form" action="/auth/local" method="post">
-  <input type="text" name="identifier" placeholder="Username or Email">
-  <input type="password" name="password" placeholder="Password">
-  <button type="submit">Sign in</button>
-</form> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <style type="text/css">
+    body{
+        background: #ededed;
+        font-family: 'Open Sans', sans-serif;
+    }
 
-<div class="container">
+    .fa-google {
+      color: #fff;
+      font-size: 2.0em;
+    }
+
+    .signinwithgooglebutton {
+      padding:5px;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar because it's pretty. Should probably be application-wide, so include it in stead of re-define it..? -->
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="" onclick="location.reload()">Leet Web Chat</a>
+		</div>
+		<div class="navbar-collapse collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href=""><strong>Go nowhere >> &nbsp;&nbsp;&nbsp;</strong></a></li>
+			</ul>
+		</div>
+	</div>
+
+  <!-- Login container -->
+  <div class="container">
     <h2>Log in</h2>
-    <form role="form" class="form-signin" method="post" action="/auth/local/login">
-
-      <input name="identifier" type="text" class="input-block-level" placeholder="User name or Email">
-      <input name="password" type="password" class="input-block-level" placeholder="Password">
-      <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+    <form>
+      <div class="form-group">
+        <label for="loginId">Username or Email</label>
+        <input type="email" class="form-control" id="loginId" placeholder="Username/Email" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-success">Login</button>
     </form>
-    <div class="container">
-      <a href="/auth/google" role="button"><img src="/images/sign-in-with-google.png"></a>
-    </div>
-</div> <!-- /container -->
+    <h3>Don't have an account?</h3>
+    <!--<a href="/auth/google"><button class="btn btn-success signinwithgooglebutton"><i class="fa fa-google"></i> Sign in with Google</button></a>-->
+    <a href="/auth/google" role="button"><img class="center-block" src="/images/sign-in-with-google.png"></a>
+    <h3>or</h3>
+    <button class="btn btn-success center-block" id="registerButton">Register</button>
+  </div>
 
-<div class="container">
-
-  <button id="register_button" class="btn btn-large btn-secondary">Create Account</button>
   <div class="container" id="register">
-      <form role="form" class="form-signin" method="post" action="/auth/local/register">
-        <h3 class="form-signin-heading">Create Account</h3>
-        <input name="username" type="text" class="input-block-level" placeholder="Username">
-        <input name="email" type="text" class="input-block-level" placeholder="Email">
-        <input name="password" type="password" class="input-block-level" placeholder="Password">
-        <button class="btn btn-large btn-primary" type="submit">Sign up</button>
-      </form>
-  </div> <!-- /container -->
-
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-<script>
-  $(document).ready(function(){
-    $("#register").hide();
-    $("#register_button").click(function(){
-        $("#register").hide();
-        $("#register_button").hide();
+    <h3>Register new account</h3>
+    <form>
+      <div class="form-group">
+        <label for="registerName">Username</label>
+        <input type="text" class="form-control" id="registerName" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <label for="registerEmail">Email</label>
+        <input type="email" class="form-control" id="registerEmail" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <label for="registerPassword">Password</label>
+        <input type="password" class="form-control" id="registerPassword" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-success">Register</button>
+    </form>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $("#register").hide();
+      $("#registerButton").click(function(){
+          $("#register").hide();
+          $("#registerButton").hide();
+      });
+      $("#registerButton").click(function(){
+          $("#register").show();
+          $("#register").animate({ scrollTop: $('#register')[0].scrollHeight}, 1000);
+      });
     });
-    $("#register_button").click(function(){
-        $("#register").show();
-    });
-  });
-</script>
+  </script>
+</body>
+</html>
