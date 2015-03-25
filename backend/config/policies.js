@@ -28,9 +28,9 @@ module.exports.policies = {
 
    '*': ['passport', 'sessionAuth'],
 
-   'flash': {
-     'remoteHome': ['passport', 'bearerAuth']
-   },
+  //  'flash': {
+  //    'remoteHome': ['passport', 'bearerAuth']
+  //  },
 
    'auth': {
      '*': ['passport']

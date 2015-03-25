@@ -7,6 +7,15 @@ var User = {
     username  : { type: 'string', unique: true },
     email     : { type: 'email',  unique: true },
     passports : { collection: 'Passport', via: 'user' },
+
+    admin: {
+      type: 'boolean',
+      defaultTo: false
+    },
+    friends: {
+      collection: "User",
+      via: 'friends'
+    },
     groups:{
       collection: "Group",
       via: "members"

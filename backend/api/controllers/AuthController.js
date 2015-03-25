@@ -173,6 +173,9 @@ var AuthController = {
 
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
+        if(user.admin){
+          res.redirect('/user');
+        }
         res.redirect('/profile');
       });
     });
