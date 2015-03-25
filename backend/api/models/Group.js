@@ -9,10 +9,15 @@ module.exports = {
   connection: "leet_chat_db",
 
   attributes: {
-    // activities: {
-    //   collection: "activity",
-    //   via: "groups"
-    // }
+    name: {type: "string"},
+    activities: {
+      collection: "Activity",
+      via: "group"
+    },
+    members: {
+      collection: "User",
+      via: "groups"
+    }
   }
 
 };

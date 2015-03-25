@@ -6,18 +6,16 @@ var User = {
   attributes: {
     username  : { type: 'string', unique: true },
     email     : { type: 'email',  unique: true },
-    passports : { collection: 'Passport', via: 'user' }
-    // groups:{
-    //   collection: "group",
-    //   via: "users",
-    //   dominant: true
-    // },
-    // activities :{
-    //   collection: "activity",
-    //   via: "users"
-    // }
+    passports : { collection: 'Passport', via: 'user' },
+    groups:{
+      collection: "Group",
+      via: "members"
+    },
+    activities :{
+      collection: "Activity",
+      via: "user"
+    }
   }
-
 };
 
 module.exports = User;

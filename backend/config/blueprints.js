@@ -61,7 +61,15 @@ module.exports.blueprints = {
   *  GET /boat/:id -> BoatController.findOne                                 *
   *  POST /boat -> BoatController.create                                     *
   *  PUT /boat/:id -> BoatController.update                                  *
-  *  DELETE /boat/:id -> BoatController.destroy                              *
+  *  DELETE /boat/:id -> BoatController.destroy
+    add
+    create
+    destroy
+    find
+    findOne
+    populate
+    remove
+    update
   *                                                                          *
   * `rest` blueprint routes are enabled by default, and are suitable for use *
   * in a production scenario, as long you take standard security precautions *

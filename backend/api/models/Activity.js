@@ -9,12 +9,14 @@ module.exports = {
   connection: "leet_chat_db",
 
   attributes: {
-    // group: {
-    //   model: "group"
-    // },
-    // user: {
-    //   model: "user"
-    // }
+    group: {
+      model: "Group",
+      required: true
+    },
+    user: {
+      model: "User",
+      required: true
+    }
   }
 
 };
