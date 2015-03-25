@@ -1,10 +1,24 @@
 var socketApp = angular.module('socketApp',[]);
 
-socketApp.controller('ChatController',['$http','$log','$scope',function($http,$log,$scope){
-
-
+socketApp
+.directive('schrollBottom', function () {
+  return {
+    scope: {
+      schrollBottom: "="
+    },
+    link: function (scope, element) {
+      scope.$watchCollection('schrollBottom', function (newValue) {
+        if (newValue)
+        {
+          $(element).scrollTop($(element)[0].scrollHeight);
+        }
+      });
+    }
+  }
+})
+.controller('ChatController',['$http','$log','$scope',function($http,$log,$scope){
 	$scope.predicate = '-id';
-	$scope.reverse = false;
+	$scope.reverse = true;
 	$scope.baseUrl = 'http://localhost:1337';
 	$scope.chatList =[];
 	$scope.getAllchat = function(){
@@ -20,7 +34,9 @@ socketApp.controller('ChatController',['$http','$log','$scope',function($http,$l
 	};
 
 	$scope.getAllchat();
-	$scope.chatUser = "Anonymous"
+	//$scope.chatUser = "Anonymous"
+  //get username from a hidden <p> tag in chat.ejs
+  $scope.chatUser = $('#hiddenName').text();
 	$scope.chatMessage="";
 
 	io.socket.on('chat',function(obj){

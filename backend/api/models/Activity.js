@@ -6,11 +6,17 @@
 */
 
 module.exports = {
+  connection: "leet_chat_db",
 
   attributes: {
-    id: "INTEGER"
-  },
-  group: {
-    model: "group"
+    group: {
+      model: "Group",
+      required: true
+    },
+    user: {
+      model: "User",
+      required: true
+    }
   }
+
 };

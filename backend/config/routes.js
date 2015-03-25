@@ -31,15 +31,26 @@ module.exports.routes = {
   * `assets` directory)                                                      *
   *                                                                          *
   ***************************************************************************/
-/*
-  '/': {
-    view: 'homepage'
-  },
 
-  '/web': {
-    view: 'web'
-  }
-*/
+  '/': 'FlashController.home',
+
+  'get /login': 'AuthController.login',
+  'get /logout': 'AuthController.logout',
+  'get /register': 'AuthController.register',
+
+  'post /auth/local': 'AuthController.callback',
+  'post /auth/local/:action': 'AuthController.callback',
+
+  'get /auth/:provider': 'AuthController.provider',
+  'get /auth/:provider/callback': 'AuthController.callback',
+  'get /auth/:provider/:action': 'AuthController.callback',
+  //'get /auth/google': passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] })
+
+  'GET /web': 'ChatController.show',
+
+  'GET /profile':'UserController.show',
+
+  'GET /group/create':'GroupController.create'
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

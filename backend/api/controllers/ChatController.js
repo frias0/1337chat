@@ -26,5 +26,9 @@ module.exports = {
 			Chat.watch(req.socket);
 			console.log( 'User subscribed to ' + req.socket.id );
 		}
+	},
+
+	show:function(req, res) {
+		res.render('chat', {myName:req.user.username});
 	}
 };

@@ -12,7 +12,10 @@ body{
 	min-height: 40px;
 }
 
-.chatMessageContainer {
-	padding-bottom: 30px;
-	padding-top:10px;
+#content {
+	padding:10px;
+}
+
+.glyphicon-plus {
+	font-size: 6.5em;
 }

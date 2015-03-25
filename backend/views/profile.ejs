@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leet Chat Web</title>
+	<!-- BootSwatch Paper Theme for Bootstrap -->
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css" rel="stylesheet">
+	<!-- Open Sans Font -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="/styles/profile_style.css" >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+<body ng-app="socketApp" ng-controller="ChatController">
+	<!-- Sails Socket Dependancy -->
+	<script type="text/javascript" src="/js/dependencies/sails.io.js"></script>
+	<!-- Angular Js  -->
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>-->
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+	<!-- Navbar because it's pretty. Should probably be application-wide, so include it in stead of re-define it..? -->
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="" onclick="location.reload()">Leet Web Chat</a>
+		</div>
+		<div class="navbar-collapse collapse navbar-responsive-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href=""><strong>Go nowhere >> &nbsp;&nbsp;&nbsp;</strong></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="col-xs-12" id="content">
+		<h1><%= myName %></h1>
+		<p>Hi my name is My, lastname Name. I blame my parents. They're dead now.</p>
+
+		<h2>Conversations</h2>
+		<div class="list-group">
+			<% for(var i=0; i<conversations.length; i++) {%>
+        <a href="/web" class="list-group-item"><span class="glyphicon glyphicon-user"></span> <%= conversations[i].name%><span class="badge">0</span></a>
+			<% }%>
+    </div>
+
+		<div class="row-fluid text-center">
+			<a href="/group/create"><span class="text-center glyphicon glyphicon-plus"></span></a>
+		</div>
+	</div>
+</body>
+</html>
