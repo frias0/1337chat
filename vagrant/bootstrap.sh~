@@ -31,6 +31,10 @@ echo "INSTALLING MYSQL"
 export DEBIAN_FRONTEND=noninteractive
 sudo apt-get install -y -q mysql-server #pw blank
 
+echo "INSTALLING STUFF"
+curl https://github.com/atom/atom/releases/download/v0.187.0/atom-amd64.deb
+sudo dpkg --install atom-amd64.deb
+
 echo "SETTING UP PROJECT"
 git clone https://github.com/frias0/leet_chat.git
 sudo chown -R vagrant leet_chat
