@@ -48,7 +48,7 @@ module.exports.routes = {
 
   'GET /web': 'ChatController.show',
 
-  'GET /profile':'UserController.show',
+  'GET /profile':'UserController.profile',
 
   'GET /group/create':'GroupController.create'
   /***************************************************************************

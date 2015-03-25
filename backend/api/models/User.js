@@ -14,7 +14,7 @@ var User = {
     friends: {
       collection: 'User',
       via: 'friends'
-    }
+    },
     groups:{
       collection: "Group",
       via: "members"

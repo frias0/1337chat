@@ -27,7 +27,7 @@ module.exports.passport = {
     name: 'Google',
     protocol: 'oauth2',
     strategy: require('passport-google-oauth').OAuth2Strategy,
-    scope: ['https://www.googleapis.com/auth/plus.login', "https://www.googleapis.com/auth/userinfo.email"],
+    scope: ['https://www.googleapis.com/auth/userinfo.profile', "https://www.googleapis.com/auth/userinfo.email"],
     options: {
       callbackURL: 'http://server.oskarlundh.eu:1337/auth/google/callback',
       clientID: '451431386283-u4siheu3s85enjkfe8tbc6n88814825t.apps.googleusercontent.com',
