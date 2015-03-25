@@ -31,7 +31,6 @@ var AuthController = {
    * @param {Object} res
    */
   login: function (req, res) {
-    console.log("login");
     var strategies = sails.config.passport
       , providers  = {};
 
@@ -128,7 +127,6 @@ var AuthController = {
    * @param {Object} res
    */
   callback: function (req, res) {
-    console.log(req.route);
     function tryAgain (err) {
 
       // Only certain error messages are returned via req.flash('error', someError)
@@ -147,7 +145,6 @@ var AuthController = {
       // login, register or disconnect action initiator view.
       // These views should take care of rendering the error messages.
       var action = req.param('action');
-      console.log("the action:"+ action);
       switch (action) {
         case 'register':
           res.redirect('/register');
@@ -161,8 +158,6 @@ var AuthController = {
     }
 
     passport.callback(req, res, function (err, user, challenges, statuses) {
-      console.log("HEJSN");
-      console.log(err, user)
       if (err || !user) {
         return tryAgain(challenges);
       }

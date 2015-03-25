@@ -41,12 +41,12 @@
 		<h2>Conversations</h2>
 		<div class="list-group">
 			<% for(var i=0; i<conversations.length; i++) {%>
-        <a href="" class="list-group-item"><span class="glyphicon glyphicon-user"></span> <%= conversations[i].name%><span class="badge"><%= conversations[i].nMessages%></span></a>
+        <a href="" class="list-group-item"><span class="glyphicon glyphicon-user"></span> <%= conversations[i].name%><span class="badge">0</span></a>
 			<% }%>
     </div>
 
 		<div class="row-fluid text-center">
-			<a href=""><span class="text-center glyphicon glyphicon-plus"></span></a>
+			<a href="/group/create"><span class="text-center glyphicon glyphicon-plus"></span></a>
 		</div>
 	</div>
 </body>
