@@ -49,8 +49,18 @@ module.exports.routes = {
   'GET /web': 'ChatController.show',
 
   'GET /profile':'UserController.profile',
+  'GET /admin':'UserController.admin',
+  'GET /admin/show/:id':'UserController.show',
+  'GET /admin/edit/:id':'UserController.edit',
+  'GET /admin/destroy/:id':'UserController.destroy',
+  'POST /admin/update/:id':'UserController.update',
+  'GET /admin/new':'UserController.new',
 
-  'GET /group/create':'GroupController.create'
+  'GET /group/create':'GroupController.create',
+
+  // 'GET /admin': {
+  //   view: 'admin/index'
+  // }
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
