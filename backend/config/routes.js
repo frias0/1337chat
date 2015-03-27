@@ -50,7 +50,9 @@ module.exports.routes = {
 
   'GET /profile':'UserController.show',
 
-  'GET /group/create':'GroupController.create'
+  'GET /group/create':'GroupController.create',
+
+  'GET /test':{view:'navbar/test'}
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
