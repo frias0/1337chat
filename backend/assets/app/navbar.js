@@ -5,7 +5,7 @@
       restrict: 'E',
       templateUrl: '/app/navbarTemplate.html',
       link: function(scope, elem, attrs) {
-        console.log(attrs.title);
+        console.log(elem);
         scope.pagename = attrs.title;
       },
       controller: ['$scope', '$log', function ($scope, $log) {
