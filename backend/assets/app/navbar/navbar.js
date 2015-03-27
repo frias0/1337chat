@@ -7,10 +7,10 @@
       link: function(scope, elem, attrs) {
         console.log(elem);
         scope.pagename = attrs.title;
+        scope.context = attrs.context;
       },
       controller: ['$scope', '$log', function ($scope, $log) {
         $scope.toggleSidebar = function() {
-          $log.info("toggle");
           $("#wrapper").toggleClass("toggled");
         };
       }],

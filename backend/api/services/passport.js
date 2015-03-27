@@ -89,11 +89,14 @@ passport.connect = function (req, query, profile, next) {
   if (profile.hasOwnProperty('username')) {
     user.username = profile.username;
   }
+  else if (profile.hasOwnProperty('name')) {
+    user.username = profile.name;
+  }
 
   // If neither an email or a username was available in the profile, we don't
   // have a way of identifying the user in the future. Throw an error and let
   // whoever's next in the line take care of it.
-  console.log(user);
+  //console.log(user);
   if (!user.username && !user.email) {
     return next(new Error('Neither a username nor email was available'));
   }

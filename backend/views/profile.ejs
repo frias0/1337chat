@@ -26,8 +26,7 @@
 			var app = angular.module('profile', ['navbar-directive', 'profile-directive']);
 		})();
 	</script>
-
-	<navbar title="Profile"></navbar>
+	<navbar title="Profile" context="CTX_PROFILE"></navbar>
 
 	<profile 	username="<%= myName%>"
 						description="some description"
