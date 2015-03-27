@@ -8,13 +8,11 @@
         console.log(attrs.title);
         scope.pagename = attrs.title;
       },
-      controller: ['$scope', function ($scope) {
-        /*$scope.pagename = "Some Page";
-
-        this.setName = function() {
-          console.log("HI!");
-          $scope.pagename = "Something";
-        };*/
+      controller: ['$scope', '$log', function ($scope, $log) {
+        $scope.toggleSidebar = function() {
+          $log.info("toggle");
+          $("#wrapper").toggleClass("toggled");
+        };
       }],
       controllerAs: 'navbarCtrl'
     };
