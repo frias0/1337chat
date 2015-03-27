@@ -58,9 +58,7 @@ module.exports.routes = {
 
   'GET /group/create':'GroupController.create',
 
-  // 'GET /admin': {
-  //   view: 'admin/index'
-  // }
+  'GET /test':{view:'navbar/test'}
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

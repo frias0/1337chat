@@ -1,4 +1,4 @@
-var socketApp = angular.module('socketApp',[]);
+var socketApp = angular.module('socketApp',['navbar-directive']);
 
 socketApp
 .directive('schrollBottom', function () {
