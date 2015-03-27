@@ -1,0 +1,30 @@
+<div class="container" ng-app="adminModule" ng-controller="AdminController">
+	<h3>User Administration</h3>
+	<a href="/admin/new" class="btn btn-sm btn-danger" method="GET">New</a>
+	<div class="container">
+		Search: <input ng-model="query">
+	</div>
+	<table class='table'>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="user in users | filter:query | orderBy:orderProp">
+				<!-- <td ng-if={{user.online}}><img src="/images/icon-online.png"></td>
+				<td ng-else><img src="/images/icon-offline.png"></td> -->
+			<td>{{user.id}}</td>
+			<td>{{user.username}}</td>
+			<td>{{user.email}}</td>
+				<td ng-if="user.admin"> <img src="/images/admin.png"></td>
+				<td ng-if="!user.admin"> <img src="/images/pawn.png"></td>
+			<td><a href="/admin/show/{{user.id}}" class="btn btn-sm btn-primary">Show</a></td>
+			<td><a href="/admin/edit/{{user.id}}" class="btn btn-sm btn-warning">Edit</a></td>
+			<td><a href="/admin/destroy/{{user.id}}" class="btn btn-sm btn-danger" method="POST">Delete</a></td>
+		</tr>
+	</table>
+</div>
