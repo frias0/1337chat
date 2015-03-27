@@ -10,11 +10,11 @@ module.exports = {
 		//var name = req.user.username;
 		var user_id = req.user.id;
 		//get conversations from User or Group model, identified by id
-		User.findOne({where: {id: user_id}}).populate('groups').exec(function(e,row){
+		User.findOne({where: {id: user_id}}).populate('groups').populate('friends').exec(function(e,row){
 			console.log(row);
 			var user = row;
 
-			res.render('profile', {myName:user.username, conversations:user.groups});
+			res.render('profile', {myName:user.username, conversations:user.groups, friends:user.friends});
 		});
   },
 
