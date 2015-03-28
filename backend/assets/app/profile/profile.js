@@ -23,9 +23,10 @@
           });
         };
         $scope.createGroup = function(){
-          $http.post('/groups/create').success(function(data){
+          $http.post('/group/create').success(function(data){
             console.log("group created", data[0]);
             //$scope.friends = data;
+            $scope.getGroups();
           }).error(function(data){
             console.log("error creating group", data);
           });

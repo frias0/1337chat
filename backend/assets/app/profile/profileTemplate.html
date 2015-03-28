@@ -4,14 +4,16 @@
 
   <h2>Conversations</h2>
   <div class="list-group">
-      <a href="/web" class="list-group-item" ng-repeat="group in groups">
-        <span class="glyphicon glyphicon-user"></span>
-        {{group.name}}
-        <span class="badge">{{group.id}}</span>
-      </a>
+      <table  class="table">
+  			<tr class="list-group-item" ng-repeat="group in groups">
+  				<td class="col-xs-12 td_class"><span class="glyphicon glyphicon-user"></span>
+          {{group.name}}
+          <span class="badge">{{group.id}}</span></td>
+  			</tr>
+  		</table>
   </div>
 
   <div class="row-fluid text-center">
-    <a href="/group/create"><span class="text-center glyphicon glyphicon-plus"></span></a>
+    <a ng-click="createGroup()"><span class="text-center glyphicon glyphicon-plus"></span></a>
   </div>
 </div>

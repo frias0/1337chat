@@ -17,7 +17,22 @@ module.exports = {
 			res.render('profile', {myName:user.username, conversations:user.groups, friends:user.friends});
 		});
   },
+	friends: function(req, res){
+		var user_id = req.user.id;
+		User.findOne({where: {id: user_id}}).populate('friends').exec(function(e,row){
+			var user = row;
 
+			res.json(user.friends);
+		});
+	},
+	groups: function(req, res){
+		var user_id = req.user.id;
+		User.findOne({where: {id: user_id}}).populate('groups').exec(function(e,row){
+			var user = row;
+
+			res.json(user.groups);
+		});
+	},
 	admin: function(req, res){
 		res.view('admin/index');
 	},

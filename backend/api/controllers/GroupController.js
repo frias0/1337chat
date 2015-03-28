@@ -16,7 +16,7 @@ module.exports = {
 				user_row.groups.add(group_row.id);
 				user_row.save();
 				group_row.save();
-				res.JSON({status: 1,});
+				return res.JSON({status: 1,});
 			});
 		});
 	},
@@ -27,7 +27,7 @@ module.exports = {
 			User.findOne({where: {id: user_id}}).populate('groups').exec(function(e,user_row){
 				user_row.groups.add(created.id);
 				user_row.save();
-				res.json({status: 1,});
+				return res.json({status: 1,});
 			});
 	  });
 	}
