@@ -27,7 +27,7 @@
             console.log("group created", data[0]);
             //$scope.friends = data;
           }).error(function(data){
-            console.log(eror creating group, data);
+            console.log("error creating group", data);
           });
         };
       }],
