@@ -30,7 +30,11 @@
         </a>
       </li>
       <li>
-        <a href="#">Friends</a>
+        <a href="#" ng-click="addFriendToggle = !addFriendToggle">Add friend <span ng-show="!addFriendToggle" class="glyphicon glyphicon-chevron-right"></span><span ng-show="addFriendToggle" class="glyphicon glyphicon-chevron-down"></span></a>
+        <form ng-show="addFriendToggle">
+          <input type="email">
+          <button type="submit">OK</button>
+        </form>
       </li>
     </ul>
 
