@@ -9,6 +9,7 @@ module.exports = {
   connection: "leet_chat_db",
 
   attributes: {
+    content: {type: "string"},
     group: {
       model: "Group",
       required: true

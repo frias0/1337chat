@@ -1,0 +1,21 @@
+<div schroll-bottom="chatList" class="col-xs-12 chatMessageContainer">
+  <table  class="table">
+    <tr class="chat_message" ng-repeat="msg in messages">
+      <td class="col-xs-12 td_class"><strong>{{ msg.user }} : </strong> {{ msg.content }}</td>
+    </tr>
+  </table>
+</div>
+
+  <!--New message/send footer-->
+<div class="navbar navbar-inverse navbar-fixed-bottom" >
+  <div class="row-xs-12">
+
+    <form class="form_chat">
+      <div class="col-xs-10 nopadding">
+          <input type="text" ng-model = "newMessage" class="form-control" placeholder="TypeYourMessageHere">
+      </div>
+      <button class="btn btn-default col-xs-2" ng-click="sendMessage()">Send</button>
+    </form>
+
+  </div>
+</div>

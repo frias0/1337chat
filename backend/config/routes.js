@@ -46,7 +46,8 @@ module.exports.routes = {
   'get /auth/:provider/:action': 'AuthController.callback',
   //'get /auth/google': passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] })
 
-  'GET /web': 'ChatController.show',
+  //'GET /web': 'ChatController.show',
+  'GET /web': {view:'chat'},
 
   'GET /profile':'UserController.profile',
   'GET /admin':'UserController.admin',
