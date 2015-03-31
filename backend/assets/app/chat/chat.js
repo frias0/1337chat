@@ -11,17 +11,26 @@
         console.log("Chat loaded. group: " + scope.groupID + " user: " + scope.user);
       },
       controller: ['$scope', '$log', '$http', function ($scope, $log, $http) {
-        /* Get all messages in this chat */
+
+        /* WHen the Activity is updated, i.e a new message arrives */
+        io.socket.on('activity', function(event) {
+          if(event.verb == 'created') {
+            $log.info("Notification. Event = user:"+event.data.user + ", content:"+event.data.content);
+            $log.info(event.data);
+            $scope.messages.push({user:event.data.user, content:event.data.content});
+            $scope.$apply();
+          }
+        });
+
+        /* Get all messages in this chat, and subscribe to the Activity model */
         $scope.getAllMessages = function() {
-          $http.get('/activity', {group:$scope.groupID}).success(function(response) {
-            $log.info("GET all Messages:" + $scope.groupID);
-            $log.info(response);
-            /* There's probably a better way to do this part. Handle in template instead? */
-            for(var i=0; i<response.length; i++) {
-              $scope.messages[i] = {user:response[i].user.username, content:response[i].content};
+          io.socket.get('/activity', {group:$scope.groupID}, function(data, jwres) {
+            /*$log.info("Subscribed. Response:");*/
+            $log.info(data);
+            for(var i=0; i<data.length; i++) {
+                $scope.messages[i] = {user:data[i].user.username, content:data[i].content};
             }
-          }).error(function(edata) {
-            $log.error("ERROR loading messages: " + edata);
+            $scope.$apply();
           });
         };
 
@@ -29,6 +38,7 @@
         $scope.sendMessage = function() {
           $log.info("Sending message: " + $scope.newMessage);
           io.socket.post('/activity', {content:$scope.newMessage, group:$scope.groupID, user:$scope.user});
+          $scope.messages.push({user:$scope.user, content:$scope.newMessage});
           $scope.newMessage = "";
         };
 

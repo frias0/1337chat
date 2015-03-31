@@ -6,9 +6,13 @@
   <div class="list-group">
       <table  class="table">
   			<tr class="list-group-item" ng-repeat="group in groups">
-  				<td class="col-xs-12 td_class"><span class="glyphicon glyphicon-user"></span>
-          {{group.name}}
-          <span class="badge">{{group.id}}</span></td>
+  				<td class="col-xs-12 td_class">
+            <a href="/web">
+              <span class="glyphicon glyphicon-user"></span>
+              {{group.name}}
+              <span class="badge">{{group.id}}</span>
+            </a>
+          </td>
   			</tr>
   		</table>
   </div>
