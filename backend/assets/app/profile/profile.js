@@ -9,8 +9,28 @@
         scope.description = attrs.description;
         scope.groups = angular.fromJson(attrs.groups);
       },
-      controller: ['$scope', '$log', function ($scope, $log) {
-        
+      controller: ['$scope', '$log', '$http', function ($scope, $log, $http) {
+        $scope.getGroups = function(){
+          $http.get('/user/groups').success(function(data){
+            console.log("fetched groups", data[0]);
+            $scope.groups = data;
+          });
+        };
+        $scope.getFriends = function(){
+          $http.get('/user/friends').success(function(data){
+            console.log("fetched friends", data[0]);
+            $scope.friends = data;
+          });
+        };
+        $scope.createGroup = function(){
+          $http.post('/group/create').success(function(data){
+            console.log("group created", data[0]);
+            //$scope.friends = data;
+            $scope.getGroups();
+          }).error(function(data){
+            console.log("error creating group", data);
+          });
+        };
       }],
       controllerAs: 'profileCtrl'
     };
