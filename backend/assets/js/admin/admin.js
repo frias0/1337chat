@@ -10,7 +10,7 @@ adminModule.controller('AdminListController', ['$scope', '$http',
 }]);
 
 adminModule.controller('AdminShowController', ['$scope', '$http','$routeParams',
-  function($scope, $http,){
+  function($scope, $http){
     $scope.showUser = function(user){
       $http.get('/user/'+user.id).success(function(data){
         console.log("show user", data);
@@ -19,7 +19,7 @@ adminModule.controller('AdminShowController', ['$scope', '$http','$routeParams',
 }]);
 
 adminModule.controller('AdminEditController', ['$scope', '$http','$routeParams',
-  function($scope, $http,){
+  function($scope, $http){
     $scope.editUser = function(user){
       $http.get('/user/'+user.id).success(function(data){
         console.log("edit user", data);
@@ -28,7 +28,7 @@ adminModule.controller('AdminEditController', ['$scope', '$http','$routeParams',
 }]);
 
 adminModule.controller('AdminNewController', ['$scope', '$http','$routeParams',
-  function($scope, $http,){
+  function($scope, $http){
     $scope.editUser = function(user){
       $http.get('/user/'+user.id).success(function(data){
         console.log("New user", data);

@@ -1,0 +1,19 @@
+body{
+    background: #ededed;
+    font-family: 'Open Sans', sans-serif;
+    padding-bottom:10px;
+}
+
+.fa-google {
+  color: #fff;
+  font-size: 2.0em;
+}
+
+.signinwithgooglebutton {
+  padding:5px;
+  text-align:center;
+}
+
+.errorMessage {
+  color: #FF0000;
+}
