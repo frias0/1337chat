@@ -17,14 +17,15 @@ var leetchatApp = angular.module('leetchatApp', [
         controller: 'AdminShowController'
       }).
       when('/profile', {
-        templateUrl: 'js/profle/profileTemplate.html',
-        controller: 'profileController'
+        templateUrl: 'js/profile/profileTemplate.html',
+        controller: 'ProfileController'
       }).
       when('/chat', {
         templateUrl: 'js/chat/chat.ejs',
         controller: 'ChatController'
       }).
       when('/', {
+        //redirectTo: '/profile'  //Så kan man göra
         templateUrl: 'js/auth/login.ejs',
         controller: 'AuthController'
       });
