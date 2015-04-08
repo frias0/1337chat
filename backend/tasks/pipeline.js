@@ -24,7 +24,7 @@ var cssFilesToInject = [
 var jsFilesToInject = [
 
   // Load sails.io before everything else
-  '/js/dependencies/angular.min.js',
+  '/js/dependencies/angular.js',
 
   'js/dependencies/sails.io.js',
 
