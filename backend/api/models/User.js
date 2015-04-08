@@ -11,9 +11,9 @@ var User = {
       type: 'boolean',
       defaultTo: false
     },
-    friends: {
+    friends:{
       collection: 'User',
-      via: 'friends'
+      via: 'id'
     },
     groups:{
       collection: "Group",

@@ -6,11 +6,17 @@
  */
 
 module.exports = {
+
+	find: function(req, res){
+		User.find({}, { 'username': 1, 'email': 1, 'id': 1, 'admin': 1 }, function(err, rows){
+			res.json(rows);
+		});
+	},
 	profile: function (req, res) {
 		//var name = req.user.username;
 		var user_id = req.user.id;
 		//get conversations from User or Group model, identified by id
-		User.findOne({where: {id: user_id}}).populate('groups').populate('friends').exec(function(e,row){
+		User.findOne({where: {id: user_id}}).populate('friends').populate('groups').exec(function(e,row){
 			console.log(row);
 			var user = row;
 
