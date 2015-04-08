@@ -1,6 +1,6 @@
 (function() {
-  var app = angular.module('profile-directive', []);
-  app.directive('profile', function() {
+  var profileModule = angular.module('profileModule', []);
+  profileModule.directive('profile', function() {
     return {
       restrict: 'E',
       templateUrl: '/app/profile/profileTemplate.html',

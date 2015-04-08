@@ -1,6 +1,6 @@
-var socketApp = angular.module('socketApp',['navbar-directive']);
+var chatModule = angular.module('chatModule',['navbar-directive']);
 
-socketApp
+chatModule
 .directive('schrollBottom', function () {
   return {
     scope: {

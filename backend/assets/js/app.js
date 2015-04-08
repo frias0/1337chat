@@ -1,28 +1,31 @@
 var leetchatApp = angular.module('leetchatApp', [
   'ngRoute',
-  'AuthController'
+  'authModule',
+  'profileModule',
+  'chatModule',
+  'adminModule'
 ])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/admin', {
-        templateUrl: 'admin/admin.ejs',
+        templateUrl: 'js/admin/admin.ejs',
         controller: 'AdminListController'
       }).
       when('/admin/show', {
-        templateUrl: 'partials/admin/adminShow.ejs',
+        templateUrl: 'js/admin/adminShow.ejs',
         controller: 'AdminShowController'
       }).
       when('/profile', {
-        templateUrl: 'profle/profileTemplate.html',
+        templateUrl: 'js/profle/profileTemplate.html',
         controller: 'profileController'
       }).
       when('/chat', {
-        templateUrl: 'chat/chat.ejs',
+        templateUrl: 'js/chat/chat.ejs',
         controller: 'ChatController'
       }).
       when('/', {
-        templateUrl: 'auth/login.ejs',
+        templateUrl: 'js/auth/login.ejs',
         controller: 'AuthController'
       });
   }]);

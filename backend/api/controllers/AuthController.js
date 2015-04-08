@@ -144,7 +144,11 @@ var AuthController = {
       // If an error was thrown, redirect the user to the
       // login, register or disconnect action initiator view.
       // These views should take care of rendering the error messages.
+
       var action = req.param('action');
+
+      console.log("Login error, "+ action);
+      
       switch (action) {
         case 'register':
           res.redirect('/register');
@@ -171,12 +175,12 @@ var AuthController = {
         // Mark the session as authenticated to work with default Sails sessionAuth.js policy
         req.session.authenticated = true
         if(user.admin){
-          res.redirect('/user');
+          res.redirect('/admin');
         }
         // Upon successful login, send the user to the homepage were req.user
         // will be available.
         if(user.admin){
-          res.redirect('/user');
+          res.redirect('/admin');
         }
         res.redirect('/profile');
       });
