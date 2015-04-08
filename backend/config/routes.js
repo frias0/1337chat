@@ -32,7 +32,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': 'FlashController.home',
 
   'get /login': 'AuthController.login',
   'get /logout': 'AuthController.logout',
@@ -44,21 +43,27 @@ module.exports.routes = {
   'get /auth/:provider': 'AuthController.provider',
   'get /auth/:provider/callback': 'AuthController.callback',
   'get /auth/:provider/:action': 'AuthController.callback',
+
+  '/': {
+    controller: 'Index',
+    action: 'index'
+  },
+
   //'get /auth/google': passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login'] })
-
-  'GET /web': 'ChatController.show',
-
-  'GET /profile':'UserController.profile',
-  'GET /admin':'UserController.admin',
-  'GET /admin/show/:id':'UserController.show',
-  'GET /admin/edit/:id':'UserController.edit',
-  'GET /admin/destroy/:id':'UserController.destroy',
-  'POST /admin/update/:id':'UserController.update',
-  'GET /admin/new':'UserController.new',
-
-  'GET /group/create':'GroupController.create',
-
-  'GET /test':{view:'navbar/test'}
+  //
+  // 'GET /web': 'ChatController.show',
+  //
+  // 'GET /profile':'UserController.profile',
+  // // 'GET /admin':'UserController.admin',
+  // // 'GET /admin/show/:id':'UserController.show',
+  // // 'GET /admin/edit/:id':'UserController.edit',
+  // // 'GET /admin/destroy/:id':'UserController.destroy',
+  // // 'POST /admin/update/:id':'UserController.update',
+  // // 'GET /admin/new':'UserController.new',
+  //
+  // 'GET /group/create':'GroupController.create',
+  //
+  // 'GET /test':{view:'navbar/test'}
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

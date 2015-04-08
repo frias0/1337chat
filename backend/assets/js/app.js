@@ -5,9 +5,6 @@ var leetchatApp = angular.module('leetchatApp', [
   'leetchatApp.navbar',
   'leetchatApp.chat'
 ])
-
-
-var adminModule = angular.module('leetchatApp.admin', [])
 .config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -15,7 +12,7 @@ var adminModule = angular.module('leetchatApp.admin', [])
         templateUrl: 'partials/admin/admin.ejs',
         controller: 'AdminListController'
       }).
-      when('/admin/show/:id', {
+      when('/admin/show', {
         templateUrl: 'partials/admin/adminShow.ejs',
         controller: 'AdminShowController'
       }).
